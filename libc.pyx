@@ -4,7 +4,9 @@ import os
 import resource
 import time
 import threading
-from libc.stdlib cimport malloc, free
+
+from recordclass import dataobject
+
 
 cdef extern from "Python.h":
     object PyDict_New()
@@ -32,6 +34,8 @@ cdef class PersonSlots:
     cdef public str last_name
     cdef public int age
 
+    __slots__ = ['firstName', 'lastName', 'age']
+
     def __cinit__(self, bytes first_name, bytes last_name, int age):
         self.first_name = first_name.decode('utf-8')
         self.last_name = last_name.decode('utf-8')
@@ -47,6 +51,8 @@ cdef class PersonDataObject:
     cdef public str first_name
     cdef public str last_name
     cdef public int age
+
+    __fields__ = ['firstName', 'lastName', 'age']
 
     def __cinit__(self, bytes first_name, bytes last_name, int age):
         self.first_name = first_name.decode('utf-8')
