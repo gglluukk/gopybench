@@ -36,7 +36,7 @@ Python program [sample.py](sample.py) with [lib.py](lib.py) implements a logic t
   - `Pypy`, 3.10.14
 
 
-## [bench.sh](bench.sh) shorten output
+## [bench.sh](bench.sh) shorten output for 4,000,000 objects created
 
 ```
 === GOLANG
