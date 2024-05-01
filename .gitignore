@@ -1,0 +1,7 @@
+_/
+build/
+__pycache__/
+.*swp
+go.*
+sample
+persons.c*

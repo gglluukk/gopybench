@@ -1,0 +1,221 @@
+
+=== PREPARE
+go: creating new go.mod: module sample
+go: to add module requirements and sums:
+	go mod tidy
+go: finding module for package golang.org/x/text/language
+go: finding module for package golang.org/x/text/message
+go: found golang.org/x/text/language in golang.org/x/text v0.14.0
+go: found golang.org/x/text/message in golang.org/x/text v0.14.0
+Compiling libc.pyx because it changed.
+[1/1] Cythonizing libc.pyx
+
+=== GOLANG
+*** golang: single thread
+1,000,000 Person in 148.076511ms. Memory: 76.00 MB.
+2,000,000 Person in 286.580442ms. Memory: 122.00 MB.
+3,000,000 Person in 413.201988ms. Memory: 167.00 MB.
+4,000,000 Person in 529.986423ms. Memory: 213.00 MB.
+* Total time: 530.055568ms
+
+*** golang: multiple threads
+1,000,000 Person in 198.58371ms. Memory: 121.00 MB.
+1,000,000 Person in 206.591758ms. Memory: 122.00 MB.
+2,000,000 Person in 375.715208ms. Memory: 206.00 MB.
+2,000,000 Person in 395.806094ms. Memory: 213.00 MB.
+* Total time: 396.051268ms
+
+=== PYTHON
+*** Person object creation: single thread
+PID/TID: 1674894/139817292228416, 1,000,000 Objects in 1.162 sec / 113.32 MB
+PID/TID: 1674894/139817292228416, 2,000,000 Objects in 2.434 sec / 212.93 MB
+PID/TID: 1674894/139817292228416, 3,000,000 Objects in 3.799 sec / 312.56 MB
+PID/TID: 1674894/139817292228416, 4,000,000 Objects in 4.970 sec / 413.92 MB
+* Total time: 5.23 seconds
+
+*** Person object creation: 2 threads
+PID/TID: 1674894/139817283860160, 1,000,000 Objects in 2.364 sec / 413.92 MB
+PID/TID: 1674894/139817275451072, 1,000,000 Objects in 2.371 sec / 413.92 MB
+PID/TID: 1674894/139817275451072, 2,000,000 Objects in 4.937 sec / 413.92 MB
+PID/TID: 1674894/139817283860160, 2,000,000 Objects in 5.047 sec / 413.92 MB
+* Total time: 5.22 seconds
+
+*** Person object creation: 2 processes
+PID/TID: 1674927/139817292228416, 1,000,000 Objects in 1.041 sec / 113.24 MB
+PID/TID: 1674927/139817292228416, 2,000,000 Objects in 2.349 sec / 212.91 MB
+PID/TID: 1674928/139817292228416, 1,000,000 Objects in 1.062 sec / 113.23 MB
+PID/TID: 1674928/139817292228416, 2,000,000 Objects in 2.380 sec / 212.91 MB
+* Total time: 2.53 seconds
+
+*** PersonSlots object creation: single thread
+PID/TID: 1674936/139855667259200, 1,000,000 Objects in 1.035 sec / 82.52 MB
+PID/TID: 1674936/139855667259200, 2,000,000 Objects in 2.167 sec / 151.29 MB
+PID/TID: 1674936/139855667259200, 3,000,000 Objects in 3.354 sec / 220.28 MB
+PID/TID: 1674936/139855667259200, 4,000,000 Objects in 4.393 sec / 290.58 MB
+* Total time: 4.61 seconds
+
+*** PersonSlots object creation: 2 threads
+PID/TID: 1674936/139855658886848, 1,000,000 Objects in 2.101 sec / 290.58 MB
+PID/TID: 1674936/139855650477760, 1,000,000 Objects in 2.142 sec / 290.58 MB
+PID/TID: 1674936/139855658886848, 2,000,000 Objects in 4.359 sec / 290.58 MB
+PID/TID: 1674936/139855650477760, 2,000,000 Objects in 4.447 sec / 290.58 MB
+* Total time: 4.60 seconds
+
+*** PersonSlots object creation: 2 processes
+PID/TID: 1674964/139855667259200, 1,000,000 Objects in 0.936 sec / 80.46 MB
+PID/TID: 1674964/139855667259200, 2,000,000 Objects in 2.081 sec / 151.39 MB
+PID/TID: 1674965/139855667259200, 1,000,000 Objects in 0.932 sec / 80.45 MB
+PID/TID: 1674965/139855667259200, 2,000,000 Objects in 2.081 sec / 151.39 MB
+* Total time: 2.20 seconds
+
+*** PersonDataObject object creation: single thread
+PID/TID: 1674972/140327329253184, 1,000,000 Objects in 0.604 sec / 67.23 MB
+PID/TID: 1674972/140327329253184, 2,000,000 Objects in 1.195 sec / 120.97 MB
+PID/TID: 1674972/140327329253184, 3,000,000 Objects in 1.753 sec / 174.44 MB
+PID/TID: 1674972/140327329253184, 4,000,000 Objects in 2.314 sec / 229.79 MB
+* Total time: 2.43 seconds
+
+*** PersonDataObject object creation: 2 threads
+PID/TID: 1674972/140327320880832, 1,000,000 Objects in 1.124 sec / 229.79 MB
+PID/TID: 1674972/140327312471744, 1,000,000 Objects in 1.169 sec / 229.79 MB
+PID/TID: 1674972/140327320880832, 2,000,000 Objects in 2.271 sec / 229.79 MB
+PID/TID: 1674972/140327312471744, 2,000,000 Objects in 2.319 sec / 229.79 MB
+* Total time: 2.41 seconds
+
+*** PersonDataObject object creation: 2 processes
+PID/TID: 1674990/140327329253184, 1,000,000 Objects in 0.583 sec / 64.69 MB
+PID/TID: 1674990/140327329253184, 2,000,000 Objects in 1.168 sec / 120.40 MB
+PID/TID: 1674989/140327329253184, 1,000,000 Objects in 0.614 sec / 64.68 MB
+PID/TID: 1674989/140327329253184, 2,000,000 Objects in 1.203 sec / 120.39 MB
+* Total time: 1.27 seconds
+
+
+=== CYTHON
+*** Person object creation: single thread
+PID/TID: 1674995/140360537290560, 1000000 Objects in 0.730 sec / 158.27 MB
+PID/TID: 1674995/140360537290560, 2000000 Objects in 1.462 sec / 303.74 MB
+PID/TID: 1674995/140360537290560, 3000000 Objects in 2.197 sec / 449.20 MB
+PID/TID: 1674995/140360537290560, 4000000 Objects in 2.942 sec / 594.91 MB
+* Total time: 3.22 seconds
+
+*** Person object creation: 2 threads
+PID/TID: 1674995/140360528893632, 1000000 Objects in 0.732 sec / 594.91 MB
+PID/TID: 1674995/140360528893632, 2000000 Objects in 1.467 sec / 594.91 MB
+PID/TID: 1674995/140360528893632, 1000000 Objects in 0.724 sec / 594.91 MB
+PID/TID: 1674995/140360528893632, 2000000 Objects in 1.450 sec / 594.91 MB
+* Total time: 3.19 seconds
+
+*** Person object creation: 2 processes
+PID/TID: 1675016/140360537290560, 1000000 Objects in 0.733 sec / 173.68 MB
+PID/TID: 1675016/140360537290560, 2000000 Objects in 1.460 sec / 319.25 MB
+PID/TID: 1675017/140360537290560, 1000000 Objects in 0.749 sec / 173.68 MB
+PID/TID: 1675017/140360537290560, 2000000 Objects in 1.556 sec / 319.25 MB
+* Total time: 1.74 seconds
+
+*** PersonSlots object creation: single thread
+PID/TID: 1675023/140023734486848, 1000000 Objects in 0.723 sec / 158.45 MB
+PID/TID: 1675023/140023734486848, 2000000 Objects in 1.446 sec / 303.92 MB
+PID/TID: 1675023/140023734486848, 3000000 Objects in 2.169 sec / 449.38 MB
+PID/TID: 1675023/140023734486848, 4000000 Objects in 2.890 sec / 595.09 MB
+* Total time: 3.16 seconds
+
+*** PersonSlots object creation: 2 threads
+PID/TID: 1675023/140023726110400, 1000000 Objects in 0.739 sec / 595.09 MB
+PID/TID: 1675023/140023726110400, 2000000 Objects in 1.470 sec / 595.09 MB
+PID/TID: 1675023/140023726110400, 1000000 Objects in 0.801 sec / 595.09 MB
+PID/TID: 1675023/140023726110400, 2000000 Objects in 1.520 sec / 595.09 MB
+* Total time: 3.26 seconds
+
+*** PersonSlots object creation: 2 processes
+PID/TID: 1675044/140023734486848, 1000000 Objects in 0.729 sec / 171.77 MB
+PID/TID: 1675044/140023734486848, 2000000 Objects in 1.455 sec / 317.45 MB
+PID/TID: 1675045/140023734486848, 1000000 Objects in 0.847 sec / 171.77 MB
+PID/TID: 1675045/140023734486848, 2000000 Objects in 1.577 sec / 317.46 MB
+* Total time: 1.73 seconds
+
+*** PersonDataObject object creation: single thread
+PID/TID: 1675051/140678689011520, 1000000 Objects in 0.726 sec / 158.45 MB
+PID/TID: 1675051/140678689011520, 2000000 Objects in 1.457 sec / 303.93 MB
+PID/TID: 1675051/140678689011520, 3000000 Objects in 2.181 sec / 449.84 MB
+PID/TID: 1675051/140678689011520, 4000000 Objects in 2.932 sec / 595.09 MB
+* Total time: 3.20 seconds
+
+*** PersonDataObject object creation: 2 threads
+PID/TID: 1675051/140678680622784, 1000000 Objects in 0.735 sec / 595.09 MB
+PID/TID: 1675051/140678680622784, 2000000 Objects in 1.468 sec / 595.09 MB
+PID/TID: 1675051/140678680622784, 1000000 Objects in 0.718 sec / 595.09 MB
+PID/TID: 1675051/140678680622784, 2000000 Objects in 1.514 sec / 595.09 MB
+* Total time: 3.26 seconds
+
+*** PersonDataObject object creation: 2 processes
+PID/TID: 1675074/140678689011520, 1000000 Objects in 0.730 sec / 173.64 MB
+PID/TID: 1675074/140678689011520, 2000000 Objects in 1.463 sec / 319.46 MB
+PID/TID: 1675073/140678689011520, 1000000 Objects in 0.744 sec / 173.62 MB
+PID/TID: 1675073/140678689011520, 2000000 Objects in 1.490 sec / 319.45 MB
+* Total time: 1.65 seconds
+
+
+=== PYPY
+*** Person object creation: single thread
+PID/TID: 1675079/140063372973952, 1,000,000 Objects in 0.346 sec / 205.10 MB
+PID/TID: 1675079/140063372973952, 2,000,000 Objects in 0.730 sec / 296.98 MB
+PID/TID: 1675079/140063372973952, 3,000,000 Objects in 1.130 sec / 402.46 MB
+PID/TID: 1675079/140063372973952, 4,000,000 Objects in 1.605 sec / 520.37 MB
+* Total time: 1.61 seconds
+
+*** Person object creation: 2 threads
+PID/TID: 1675079/140063272122048, 1,000,000 Objects in 0.670 sec / 575.79 MB
+PID/TID: 1675079/140063263729344, 1,000,000 Objects in 0.679 sec / 577.16 MB
+PID/TID: 1675079/140063272122048, 2,000,000 Objects in 1.427 sec / 757.94 MB
+PID/TID: 1675079/140063263729344, 2,000,000 Objects in 1.433 sec / 774.68 MB
+* Total time: 1.47 seconds
+
+*** Person object creation: 2 processes
+PID/TID: 1675091/140063372973952, 1,000,000 Objects in 0.679 sec / 749.26 MB
+PID/TID: 1675091/140063372973952, 2,000,000 Objects in 1.493 sec / 776.62 MB
+PID/TID: 1675092/140063372973952, 1,000,000 Objects in 0.706 sec / 749.32 MB
+PID/TID: 1675092/140063372973952, 2,000,000 Objects in 1.489 sec / 776.68 MB
+* Total time: 1.67 seconds
+
+*** PersonSlots object creation: single thread
+PID/TID: 1675098/140626546362240, 1,000,000 Objects in 0.341 sec / 205.82 MB
+PID/TID: 1675098/140626546362240, 2,000,000 Objects in 0.728 sec / 297.13 MB
+PID/TID: 1675098/140626546362240, 3,000,000 Objects in 1.125 sec / 402.42 MB
+PID/TID: 1675098/140626546362240, 4,000,000 Objects in 1.596 sec / 520.45 MB
+* Total time: 1.60 seconds
+
+*** PersonSlots object creation: 2 threads
+PID/TID: 1675098/140626443015872, 1,000,000 Objects in 0.652 sec / 581.03 MB
+PID/TID: 1675098/140626434623168, 1,000,000 Objects in 0.655 sec / 581.03 MB
+PID/TID: 1675098/140626443015872, 2,000,000 Objects in 1.439 sec / 788.13 MB
+PID/TID: 1675098/140626434623168, 2,000,000 Objects in 1.428 sec / 788.13 MB
+* Total time: 1.45 seconds
+
+*** PersonSlots object creation: 2 processes
+PID/TID: 1675110/140626546362240, 1,000,000 Objects in 1.004 sec / 762.47 MB
+PID/TID: 1675110/140626546362240, 2,000,000 Objects in 1.478 sec / 774.98 MB
+PID/TID: 1675111/140626546362240, 1,000,000 Objects in 1.015 sec / 762.53 MB
+PID/TID: 1675111/140626546362240, 2,000,000 Objects in 1.499 sec / 775.04 MB
+* Total time: 1.67 seconds
+
+*** PersonDataObject object creation: single thread
+PID/TID: 1675117/140623392909184, 1,000,000 Objects in 0.346 sec / 205.62 MB
+PID/TID: 1675117/140623392909184, 2,000,000 Objects in 0.727 sec / 297.16 MB
+PID/TID: 1675117/140623392909184, 3,000,000 Objects in 1.120 sec / 402.43 MB
+PID/TID: 1675117/140623392909184, 4,000,000 Objects in 1.592 sec / 520.48 MB
+* Total time: 1.59 seconds
+
+*** PersonDataObject object creation: 2 threads
+PID/TID: 1675117/140623353910976, 1,000,000 Objects in 0.652 sec / 581.06 MB
+PID/TID: 1675117/140623345518272, 1,000,000 Objects in 0.665 sec / 581.06 MB
+PID/TID: 1675117/140623353910976, 2,000,000 Objects in 1.326 sec / 766.81 MB
+PID/TID: 1675117/140623345518272, 2,000,000 Objects in 1.410 sec / 789.74 MB
+* Total time: 1.43 seconds
+
+*** PersonDataObject object creation: 2 processes
+PID/TID: 1675129/140623392909184, 1,000,000 Objects in 1.004 sec / 764.80 MB
+PID/TID: 1675129/140623392909184, 2,000,000 Objects in 1.490 sec / 777.31 MB
+PID/TID: 1675128/140623392909184, 1,000,000 Objects in 1.019 sec / 764.75 MB
+PID/TID: 1675128/140623392909184, 2,000,000 Objects in 1.511 sec / 777.25 MB
+* Total time: 1.66 seconds
+
